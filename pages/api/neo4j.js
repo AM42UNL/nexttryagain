@@ -1,3 +1,4 @@
+
 import neo4j from "neo4j-driver";
 
 (async() => {
@@ -5,7 +6,7 @@ import neo4j from "neo4j-driver";
     
     const uri = 'neo4j+s://b7a98098.databases.neo4j.io';
     const user = 'neo4j';
-    const password = 'PUkH9Xko7FkcjoKxRIdaUuHhIwUrwpStaNqfTIdTqrw';
+    const password = 'NEO4J';
     
     const driver = neo4j.driver(uri, neo4j.auth.basic(user, password))
     const session = driver.session()
@@ -50,4 +51,5 @@ import neo4j from "neo4j-driver";
    
     // Don't forget to close the driver connection when you're finished with it
     await driver.close()
+>>>>>>> origin/master
    })();

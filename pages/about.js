@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const about =() =>{
     return(
         <div>
@@ -6,4 +7,3 @@ const about =() =>{
     )
 }
 
-export default about
