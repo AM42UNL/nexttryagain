@@ -1,9 +1,7 @@
 const about = () => {
     return (
         <div>
-            <h1>
-                About this time of year, things get windy
-            </h1>
+            <h1> About this time of year, things get windy  </h1>
         </div>
     )
 }
