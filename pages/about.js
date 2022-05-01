@@ -2,8 +2,10 @@ const about = () => {
     return (
         <div>
             <h1>
-                About
+                About this time of year, things get windy
             </h1>
         </div>
     )
 }
+
+export default about
