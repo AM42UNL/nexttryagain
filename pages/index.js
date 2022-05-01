@@ -5,12 +5,6 @@ import styles from '../styles/Home.module.css'
 export default function Home() {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>Next App Database Connection</title>
-
-      </Head>
-
-
     </div>
   )
 }
