@@ -8,7 +8,7 @@ const driver = neo4j.driver(uri, neo4j.auth.basic(user, password))
 
 export default async function handler(req, res) {
     const session = driver.session();
-    const response = await session.run('MATCH (w) RETURN LABELS(w), COUNT(w) AS count');
+    const response = await session.run('MATCH q2 = (q1:Quote {complexity:"Low"})-[:fromWork] -> (Work) <- [wrote] -(Author) RETURN q2');
 
     const records =  response.records.map((record) => {
         return record.toObject();
