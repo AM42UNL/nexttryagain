@@ -9,7 +9,7 @@ let quotesDatabase = "Wait for It";
 
 const driver = neo4j.driver(uri, neo4j.auth.basic(user, password))
 
-async function handler() {
+async function handler(req, res) {
   const session = driver.session();
   //const response = await session.run('MATCH (quote:Quote {complexity:"Low"})-[:fromWork] -> (work:Work) - [typeOf] ->(type:Type) RETURN quote, work, type');
   const response = await session.run('MATCH (quote:Quote) RETURN quote');
