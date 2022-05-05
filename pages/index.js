@@ -4,7 +4,7 @@ import neo4j from "neo4j-driver";
 let dataResponse;
 const uri = 'neo4j+s://0436e85b.databases.neo4j.io';
 const user = 'neo4j';
-const password = 'qSnau9XlF88tUHhKtPdBQ-o9_frLEKpIKWO26WcAa8Y';
+const password = process.env.NEO4J;
 let quotesDatabase = "Wait for It";
 
 const driver = neo4j.driver(uri, neo4j.auth.basic(user, password))
