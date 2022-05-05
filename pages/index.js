@@ -15,6 +15,7 @@ async function handler() {
   const response = await session.run('MATCH (quote:Quote) RETURN quote');
   const records = response.records.map((record) => {
     let quotesFromDatabase = record.toObject();
+    console.log("Data: ", quotesFromDatabase);
     document.getElementById("dataDrop").innerHTML = quotesFromDatabase.body[0].quote.properties.quote;
   })
 }
