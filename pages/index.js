@@ -9,17 +9,22 @@ let quotesDatabase = "Wait for It";
 
 const driver = neo4j.driver(uri, neo4j.auth.basic(user, password))
 
-/*async function handler() {
+async function handler() {
   const session = driver.session();
   //const response = await session.run('MATCH (quote:Quote {complexity:"Low"})-[:fromWork] -> (work:Work) - [typeOf] ->(type:Type) RETURN quote, work, type');
   const response = await session.run('MATCH (quote:Quote) RETURN quote');
-  const records =  response.records.map((record) => {
-    quotesDatabase= record.toObject();
-  })  */
+  const records = response.records.map((record) => {
+    let quotesFromDatabase = record.toObject();
+    document.getElementById("dataDrop").innerHTML = quotesFromDatabase.body[0].quote.properties.quote;
+  })
+}
 
   function changeWait() {
-  document.getElementById("dataDrop").innerHTML="I'm new";
-}
+    handler();
+
+    // document.getElementById("dataDrop").innerHTML="I'm new";
+  }
+
 
   export default function Home() {
     return (
